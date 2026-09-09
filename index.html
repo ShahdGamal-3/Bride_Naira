@@ -57,6 +57,17 @@
     position:relative;
     box-shadow:0 0 40px rgba(0,0,0,.25);
   }
+  .page.is-locked{ height:100vh; min-height:100vh; }
+  .page.is-locked #topMarquee{
+    position:absolute; left:0; right:0; bottom:0; z-index:5;
+  }
+  .page.is-locked #dateMarquee,
+  .page.is-locked > .ayah-page,
+  .page.is-locked > .date-page,
+  .page.is-locked > .location,
+  .page.is-locked > .closing,
+  .page.is-locked > .rsvp,
+  .page.is-locked > .back-to-envelope{ display:none; }
   section{position:relative;}
   img{display:block; max-width:100%;}
 
@@ -73,7 +84,14 @@
   .cream-bg{ background:var(--cream); color:var(--dark); }
 
   /* ---------- HERO ---------- */
-  .hero{ padding:34px 26px 12px; text-align:center; }
+  .hero{ padding:34px 26px 30px; text-align:center; overflow:hidden; }
+  .hero:before{
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
+    background-image:radial-gradient(circle, rgba(218,122,164,.28) 1.5px, transparent 1.7px);
+    background-size:28px 28px; animation:backgroundDrift 12s linear infinite;
+  }
+  .hero > *{ position:relative; z-index:1; }
+  @keyframes backgroundDrift{ from{background-position:0 0;} to{background-position:28px 56px;} }
   .swoop{ width:100%; height:70px; display:block; margin-bottom:6px; }
   .hero .finally{
     font-family:'Gaegu',cursive;
@@ -111,18 +129,18 @@
   .photo-wrap img{ width:100%; height:auto; }
   .photo-wrap{ display:none; }
   .hero-envelope{
-    width:250px; height:178px; margin:18px auto 0; padding:0;
+    width:250px; height:220px; margin:18px auto 0; padding:0;
     border:0; background:transparent; cursor:pointer; position:relative;
     display:block; perspective:700px;
   }
   .hero-envelope:focus-visible{ outline:3px solid var(--maroon); outline-offset:6px; }
   .envelope-paper{
-    position:absolute; z-index:1; left:24px; right:24px; bottom:30px; height:112px;
+    position:absolute; z-index:1; left:24px; right:24px; bottom:58px; height:112px;
     background:var(--cream); border:1px solid rgba(171,13,78,.2);
     box-shadow:0 5px 12px rgba(61,16,16,.14); transition:transform .8s ease .15s;
   }
   .envelope-body{
-    position:absolute; z-index:2; left:0; right:0; bottom:20px; height:120px;
+    position:absolute; z-index:2; left:0; right:0; bottom:48px; height:120px;
     background:var(--maroon); border-radius:4px; overflow:hidden;
     box-shadow:0 12px 22px rgba(61,16,16,.2);
   }
@@ -132,7 +150,7 @@
   .envelope-body:before{ left:0; border-width:120px 125px 0 0; border-color:var(--maroon-deep) transparent transparent transparent; }
   .envelope-body:after{ right:0; border-width:0 125px 120px 0; border-color:transparent #c20f5c transparent transparent; }
   .envelope-flap{
-    position:absolute; z-index:3; top:38px; left:0; width:100%; height:112px;
+    position:absolute; z-index:3; top:26px; left:0; width:100%; height:112px;
     background:var(--maroon-deep); clip-path:polygon(0 0,50% 72%,100% 0,100% 18%,50% 90%,0 18%);
     transform-origin:top center; transition:transform .8s ease, z-index 0s linear .4s;
   }
@@ -144,6 +162,38 @@
   .hero-envelope.is-open .envelope-paper{ transform:translateY(-62px); }
   .hero-envelope.is-open .envelope-flap{ transform:rotateX(180deg); z-index:1; }
   .hero-envelope.is-open .tap-label{ opacity:0; }
+  .hero.is-opening .hero-envelope{ animation:envelopeEnter .9s ease both; }
+  .hero.is-opening .envelope-paper{ transform:translateY(-12px); }
+  .hero.is-opening .hero-envelope.is-open .envelope-paper{ transform:translateY(-12px); }
+  .hero.is-opening .finally{ animation:heroTextEnter .8s ease .1s both; }
+  .hero.is-opening h1{ animation:heroTextEnter .8s ease .2s both; }
+  .hero.is-opening .swoop{ animation:heroTextEnter .8s ease 0s both; }
+  @keyframes envelopeEnter{
+    0%{ transform:translateY(0) scale(1); }
+    55%{ transform:translateY(60px) scale(1.03); }
+    100%{ transform:translateY(52px) scale(1); }
+  }
+  @keyframes heroTextEnter{
+    from{ opacity:.35; transform:translateY(18px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+  .celebration{ position:absolute; inset:0; pointer-events:none; z-index:2; }
+  .celebration span{ position:absolute; width:7px; height:14px; opacity:0; background:var(--maroon); }
+  .celebration span:nth-child(1){ left:15%; top:46%; transform:rotate(20deg); }
+  .celebration span:nth-child(2){ left:28%; top:42%; background:#e8639b; transform:rotate(-28deg); }
+  .celebration span:nth-child(3){ right:25%; top:44%; background:#f0b34f; transform:rotate(34deg); }
+  .celebration span:nth-child(4){ right:13%; top:49%; background:var(--maroon-deep); transform:rotate(-18deg); }
+  .celebration span:nth-child(5){ left:50%; top:35%; background:#e8639b; transform:rotate(8deg); }
+  .hero.is-opening .celebration span{ animation:confettiPop 1.2s ease-out both; }
+  .hero.is-opening .celebration span:nth-child(2){ animation-delay:.08s; }
+  .hero.is-opening .celebration span:nth-child(3){ animation-delay:.14s; }
+  .hero.is-opening .celebration span:nth-child(4){ animation-delay:.2s; }
+  .hero.is-opening .celebration span:nth-child(5){ animation-delay:.26s; }
+  @keyframes confettiPop{
+    0%{ opacity:0; transform:translateY(18px) rotate(0); }
+    25%{ opacity:1; }
+    100%{ opacity:0; transform:translate(var(--drift, 8px),-72px) rotate(180deg); }
+  }
 
   /* marquee strip */
   .marquee{
@@ -547,10 +597,16 @@
     font-weight:700;
     font-size:1.6rem;
   }
+  .back-to-envelope{ padding:8px 28px 28px; text-align:center; }
+  .back-to-envelope button{
+    border:0; background:transparent; color:var(--maroon);
+    font-family:'Caveat',cursive; font-size:1.25rem; cursor:pointer;
+    text-decoration:underline; text-underline-offset:4px;
+  }
 </style>
 </head>
 <body>
-<div class="page">
+<div class="page is-locked" id="invitationPage">
 
   <!-- HERO -->
   <section class="hero cream-bg">
@@ -569,9 +625,12 @@
       <span class="envelope-flap"></span>
       <span class="tap-label">TAP TO OPEN...</span>
     </button>
+    <div class="celebration" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
   </section>
 
-  <div class="marquee"><div class="track">
+  <div class="marquee" id="topMarquee"><div class="track">
     <span>you are invited</span><span>you are invited</span><span>you are invited</span><span>you are invited</span>
     <span>you are invited</span><span>you are invited</span><span>you are invited</span><span>you are invited</span>
   </div></div>
@@ -625,7 +684,7 @@
     </div>
   </section>
 
-  <div class="marquee"><div class="track">
+  <div class="marquee" id="dateMarquee"><div class="track">
     <span>24.11.2026</span><span>24.11.2026</span><span>24.11.2026</span><span>24.11.2026</span>
     <span>24.11.2026</span><span>24.11.2026</span><span>24.11.2026</span><span>24.11.2026</span>
   </div></div>
@@ -673,6 +732,10 @@
     </form>
   </section>
 
+  <section class="back-to-envelope cream-bg">
+    <button type="button" id="backToEnvelope">CLICK TO GO BACK</button>
+  </section>
+
 </div>
 
 <script>
@@ -697,12 +760,24 @@
     setInterval(tick, 1000);
   })();
 
+  var invitationPage = document.getElementById('invitationPage');
+  var hero = document.querySelector('.hero');
   document.getElementById('heroEnvelope').addEventListener('click', function(){
     var envelope = this;
+    invitationPage.classList.remove('is-locked');
     envelope.classList.add('is-open');
+    hero.classList.add('is-opening');
     setTimeout(function(){
       document.querySelector('.ayah-page').scrollIntoView({behavior:'smooth', block:'start'});
     }, 850);
+  });
+
+  document.getElementById('backToEnvelope').addEventListener('click', function(){
+    var envelope = document.getElementById('heroEnvelope');
+    envelope.classList.remove('is-open');
+    hero.classList.remove('is-opening');
+    invitationPage.classList.add('is-locked');
+    window.scrollTo({top:0, behavior:'smooth'});
   });
 
   // RSVP form (client-side only)
