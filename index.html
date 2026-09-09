@@ -33,10 +33,12 @@
 
   :root{
     --cream:#faf7de;
-    --maroon:#ab0d4e;
-    --maroon-deep:#8f0b42;
+    --maroon:#8d9b3f;
+    --maroon-deep:#71802c;
     --dark:#3d1010;
-    --pink:#da7aa4;
+    --pink:#8d9b3f;
+    --green:#8d9b3f;
+    --green-deep:#71802c;
     --dusty:#e0b8ba;
     --sand:#f5e7d9;
   }
@@ -72,7 +74,7 @@
     position:absolute; inset:0; z-index:8; pointer-events:none; overflow:hidden;
   }
   .heart-rain span{
-    position:absolute; color:rgba(171,13,78,.2); font-family:'Caveat',cursive;
+    position:absolute; color:rgba(141,155,63,.3); font-family:'Caveat',cursive;
     font-size:1.25rem; animation:pageHeartFloat 6s ease-in-out infinite;
   }
   .heart-rain span:nth-child(1){left:7%;top:5%;animation-delay:-1s}
@@ -108,23 +110,23 @@
   .heart-rain span:nth-child(31){left:47%;top:93%;animation-delay:-5.9s}
   .heart-rain span:nth-child(32){left:22%;top:97%;font-size:1rem;animation-delay:-2.9s}
   .heart-rain .bow{
-    width:22px; height:10px; background:rgba(171,13,78,.24); border-radius:50%;
+    width:22px; height:10px; background:rgba(141,155,63,.3); border-radius:50%;
     animation-duration:7s;
   }
   .heart-rain .bow:before,.heart-rain .bow:after{
     content:""; position:absolute; top:-4px; width:11px; height:14px;
-    background:rgba(171,13,78,.24); border-radius:70% 30% 70% 30%;
+    background:rgba(141,155,63,.3); border-radius:70% 30% 70% 30%;
   }
   .heart-rain .bow:before{left:-8px;transform:rotate(28deg)}
   .heart-rain .bow:after{right:-8px;transform:scaleX(-1) rotate(28deg)}
   .heart-rain .ribbon{
-    width:6px; height:24px; background:rgba(171,13,78,.22); border-radius:4px;
+    width:6px; height:24px; background:rgba(141,155,63,.28); border-radius:4px;
     animation-duration:8s;
   }
   .heart-rain .ribbon:after{
     content:""; position:absolute; bottom:-5px; left:-3px;
     border-left:6px solid transparent; border-right:6px solid transparent;
-    border-top:7px solid rgba(171,13,78,.22);
+    border-top:7px solid rgba(141,155,63,.28);
   }
   .heart-rain span:nth-child(33){left:48%;top:16%;}
   .heart-rain span:nth-child(34){left:72%;top:31%;transform:rotate(12deg)}
@@ -157,18 +159,18 @@
   .hero{ padding:34px 26px 30px; text-align:center; overflow:hidden; }
   .hero:before{
     content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
-    background-image:radial-gradient(circle, rgba(218,122,164,.28) 1.5px, transparent 1.7px);
+    background-image:radial-gradient(circle, rgba(141,155,63,.3) 1.5px, transparent 1.7px);
     background-size:28px 28px; animation:backgroundDrift 12s linear infinite;
   }
   .hero:after{
     content:"♥     ♥     ♥"; position:absolute; left:0; right:0; bottom:18%;
-    color:rgba(171,13,78,.12); font-family:'Caveat',cursive; font-size:2.2rem;
+    color:rgba(141,155,63,.2); font-family:'Caveat',cursive; font-size:2.2rem;
     letter-spacing:18px; white-space:nowrap; pointer-events:none;
     animation:heartFloat 7s ease-in-out infinite;
   }
   .ambient-decor{ position:absolute; inset:0; pointer-events:none; z-index:0; }
   .ambient-decor span{
-    position:absolute; color:rgba(171,13,78,.22); font-family:'Caveat',cursive;
+    position:absolute; color:rgba(141,155,63,.3); font-family:'Caveat',cursive;
     font-size:1.55rem; animation:ambientFloat 5s ease-in-out infinite;
   }
   .ambient-decor span:nth-child(1){ left:10%; top:18%; animation-delay:-1s; }
@@ -229,7 +231,7 @@
   .hero-envelope:focus-visible{ outline:3px solid var(--maroon); outline-offset:6px; }
   .envelope-paper{
     position:absolute; z-index:1; left:24px; right:24px; bottom:58px; height:112px;
-    background:var(--cream); border:1px solid rgba(171,13,78,.2);
+    background:var(--cream); border:1px solid rgba(141,155,63,.3);
     box-shadow:0 5px 12px rgba(61,16,16,.14); transition:transform .8s ease .15s;
   }
   .envelope-body{
@@ -241,7 +243,7 @@
     content:""; position:absolute; bottom:0; width:0; height:0; border-style:solid; z-index:2;
   }
   .envelope-body:before{ left:0; border-width:120px 125px 0 0; border-color:var(--maroon-deep) transparent transparent transparent; }
-  .envelope-body:after{ right:0; border-width:0 125px 120px 0; border-color:transparent #c20f5c transparent transparent; }
+  .envelope-body:after{ right:0; border-width:0 125px 120px 0; border-color:transparent #879436 transparent transparent; }
   .envelope-flap{
     position:absolute; z-index:3; top:26px; left:0; width:100%; height:112px;
     background:var(--maroon-deep); clip-path:polygon(0 0,50% 72%,100% 0,100% 18%,50% 90%,0 18%);
@@ -274,10 +276,10 @@
   .celebration{ position:absolute; inset:0; pointer-events:none; z-index:2; }
   .celebration span{ position:absolute; width:7px; height:14px; opacity:0; background:var(--maroon); }
   .celebration span:nth-child(1){ left:15%; top:46%; transform:rotate(20deg); }
-  .celebration span:nth-child(2){ left:28%; top:42%; background:#e8639b; transform:rotate(-28deg); }
-  .celebration span:nth-child(3){ right:25%; top:44%; background:#f0b34f; transform:rotate(34deg); }
+  .celebration span:nth-child(2){ left:28%; top:42%; background:var(--green); transform:rotate(-28deg); }
+  .celebration span:nth-child(3){ right:25%; top:44%; background:#d1b84f; transform:rotate(34deg); }
   .celebration span:nth-child(4){ right:13%; top:49%; background:var(--maroon-deep); transform:rotate(-18deg); }
-  .celebration span:nth-child(5){ left:50%; top:35%; background:#e8639b; transform:rotate(8deg); }
+  .celebration span:nth-child(5){ left:50%; top:35%; background:var(--green); transform:rotate(8deg); }
   .hero.is-opening .celebration span{ animation:confettiPop 1.2s ease-out both; }
   .hero.is-opening .celebration span:nth-child(2){ animation-delay:.08s; }
   .hero.is-opening .celebration span:nth-child(3){ animation-delay:.14s; }
@@ -380,8 +382,8 @@
   }
   .seconds-box .cd-num{ animation:secondsPulse 1s ease-in-out infinite; }
   @keyframes secondsPulse{
-    0%,100%{ text-shadow:0 0 0 rgba(218,122,164,0); transform:scale(1); }
-    50%{ text-shadow:0 0 12px rgba(218,122,164,.95),0 0 22px rgba(218,122,164,.45); transform:scale(1.12); }
+    0%,100%{ text-shadow:0 0 0 rgba(141,155,63,0); transform:scale(1); }
+    50%{ text-shadow:0 0 12px rgba(141,155,63,.95),0 0 22px rgba(141,155,63,.5); transform:scale(1.12); }
   }
   .cd-label{
     font-size:.72rem;
@@ -415,8 +417,8 @@
     border-radius:2px;
     padding:20px 14px 28px;
     position:relative;
-    box-shadow:0 10px 24px rgba(171,13,78,.14);
-    border:1px solid rgba(218,122,164,.25);
+    box-shadow:0 10px 24px rgba(141,155,63,.2);
+    border:1px solid rgba(141,155,63,.35);
   }
   .tape{
     width:90px; height:28px;
@@ -455,12 +457,12 @@
     display:inline-flex; align-items:center; justify-content:center;
     width:34px; height:34px; border-radius:50%;
     border:2px solid var(--maroon);
-    box-shadow:0 0 7px rgba(218,122,164,.65),0 0 14px rgba(218,122,164,.25);
+    box-shadow:0 0 7px rgba(141,155,63,.75),0 0 14px rgba(141,155,63,.3);
     animation:dateGlow 1.8s ease-in-out infinite;
   }
   @keyframes dateGlow{
-    0%,100%{ box-shadow:0 0 7px rgba(218,122,164,.65),0 0 14px rgba(218,122,164,.25); transform:scale(1); }
-    50%{ box-shadow:0 0 10px rgba(218,122,164,.9),0 0 22px rgba(218,122,164,.45); transform:scale(1.12); }
+    0%,100%{ box-shadow:0 0 7px rgba(141,155,63,.75),0 0 14px rgba(141,155,63,.3); transform:scale(1); }
+    50%{ box-shadow:0 0 10px rgba(141,155,63,1),0 0 22px rgba(141,155,63,.55); transform:scale(1.12); }
   }
 
 
@@ -492,6 +494,11 @@
     margin:4px 0 2px;
   }
   .venue-address{ font-size:1.2rem; margin:0 0 22px; }
+  .map-frame{
+    width:100%; height:190px; border:3px solid rgba(255,255,255,.9);
+    display:block; margin:0 auto 22px; box-shadow:0 8px 18px rgba(0,0,0,.18);
+    background:#dfe8d1;
+  }
   .maps-btn{
     display:inline-block;
     background:rgba(0,0,0,.18);
@@ -585,7 +592,7 @@
   .envelope .tape{ background:rgba(255,255,255,.8); z-index:3; }
   .env-body{
     position:absolute; inset:0;
-    background:#e8639b;
+    background:var(--green);
     border-radius:3px;
     overflow:hidden;
   }
@@ -597,14 +604,14 @@
     position:absolute; top:0; left:0;
     border-style:solid;
     border-width:0 110px 95px 110px;
-    border-color:transparent transparent #f487b5 transparent;
+    border-color:transparent transparent #a9b764 transparent;
   }
   .env-flap::after{
     content:"";
     position:absolute; top:0; left:0; width:0; height:0;
     border-style:solid;
     border-width:75px 110px 0 110px;
-    border-color:#d85791 transparent transparent transparent;
+    border-color:var(--green-deep) transparent transparent transparent;
   }
   .saving-text{
     font-family:'Caveat',cursive;
@@ -726,8 +733,8 @@
       <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
     </div>
     <svg class="swoop" viewBox="0 0 400 70" preserveAspectRatio="none">
-      <path d="M0,5 C100,70 300,70 400,5" fill="none" stroke="#ab0d4e" stroke-width="3"/>
-      <path d="M190,32 c-8,-10 -24,-2 -18,10 c4,8 14,14 18,18 c4,-4 14,-10 18,-18 c6,-12 -10,-20 -18,-10z" fill="#ab0d4e"/>
+      <path d="M0,5 C100,70 300,70 400,5" fill="none" stroke="#8d9b3f" stroke-width="3"/>
+      <path d="M190,32 c-8,-10 -24,-2 -18,10 c4,8 14,14 18,18 c4,-4 14,-10 18,-18 c6,-12 -10,-20 -18,-10z" fill="#8d9b3f"/>
     </svg>
     <p class="finally">Finally,</p>
     <h1>WE ARE<br>GETTING MARRIED</h1>
@@ -753,7 +760,7 @@
   <!-- AYAH / NAMES -->
   <section class="ayah-page maroon-bg">
     <svg class="ayah-swoop" viewBox="0 0 120 40" preserveAspectRatio="none">
-      <path d="M0,4 C30,40 90,40 120,4" fill="none" stroke="#ab0d4e" stroke-width="2.5"/>
+      <path d="M0,4 C30,40 90,40 120,4" fill="none" stroke="#8d9b3f" stroke-width="2.5"/>
     </svg>
     <p class="ayah-text">
       ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
@@ -813,6 +820,13 @@
     </div>
     <div class="venue-name">L&rsquo;Or&eacute;al Open Air</div>
     <div class="venue-address">Al Galaa Club, Heliopolis</div>
+    <iframe
+      class="map-frame"
+      title="Google Maps location for L'Oréal Open Air"
+      src="https://maps.google.com/maps?q=L%27Or%C3%A9al%20Open%20Air%2C%20Al%20Galaa%20Club%2C%20Heliopolis&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
     <a class="maps-btn" href="https://goo.gl/maps/n6vBKeuRdsUcYDbj7?g_st=afm" target="_blank" rel="noopener">Open in Google Maps</a>
   </section>
 
