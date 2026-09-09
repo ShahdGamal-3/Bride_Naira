@@ -33,12 +33,12 @@
 
   :root{
     --cream:#faf7de;
-    --maroon:#e56f7b;
-    --maroon-deep:#c94f61;
+    --maroon:#c9a24e;
+    --maroon-deep:#9a7330;
     --dark:#3d1010;
-    --pink:#e56f7b;
-    --green:#e56f7b;
-    --green-deep:#c94f61;
+    --pink:#c9a24e;
+    --green:#c9a24e;
+    --green-deep:#9a7330;
     --dusty:#e0b8ba;
     --sand:#f5e7d9;
   }
@@ -74,7 +74,7 @@
     position:absolute; inset:0; z-index:8; pointer-events:none; overflow:hidden;
   }
   .heart-rain span{
-    position:absolute; color:rgba(229,111,123,.32); font-family:'Caveat',cursive;
+    position:absolute; color:rgba(201,162,78,.45); font-family:'Caveat',cursive;
     font-size:1.25rem; animation:pageHeartFloat 6s ease-in-out infinite;
   }
   .heart-rain span:nth-child(1){left:7%;top:5%;animation-delay:-1s}
@@ -110,23 +110,23 @@
   .heart-rain span:nth-child(31){left:47%;top:93%;animation-delay:-5.9s}
   .heart-rain span:nth-child(32){left:22%;top:97%;font-size:1rem;animation-delay:-2.9s}
   .heart-rain .bow{
-    width:22px; height:10px; background:rgba(229,111,123,.32); border-radius:50%;
+    width:22px; height:10px; background:rgba(201,162,78,.42); border-radius:50%;
     animation-duration:7s;
   }
   .heart-rain .bow:before,.heart-rain .bow:after{
     content:""; position:absolute; top:-4px; width:11px; height:14px;
-    background:rgba(229,111,123,.32); border-radius:70% 30% 70% 30%;
+    background:rgba(201,162,78,.42); border-radius:70% 30% 70% 30%;
   }
   .heart-rain .bow:before{left:-8px;transform:rotate(28deg)}
   .heart-rain .bow:after{right:-8px;transform:scaleX(-1) rotate(28deg)}
   .heart-rain .ribbon{
-    width:6px; height:24px; background:rgba(229,111,123,.3); border-radius:4px;
+    width:6px; height:24px; background:rgba(201,162,78,.4); border-radius:4px;
     animation-duration:8s;
   }
   .heart-rain .ribbon:after{
     content:""; position:absolute; bottom:-5px; left:-3px;
     border-left:6px solid transparent; border-right:6px solid transparent;
-    border-top:7px solid rgba(229,111,123,.3);
+    border-top:7px solid rgba(201,162,78,.4);
   }
   .heart-rain span:nth-child(33){left:48%;top:16%;}
   .heart-rain span:nth-child(34){left:72%;top:31%;transform:rotate(12deg)}
@@ -152,25 +152,26 @@
     text-align:center;
     margin:0 0 18px;
   }
-  .maroon-bg{ background:var(--maroon); color:var(--cream); }
+  .maroon-bg{ background:var(--maroon); color:#fff; }
   .cream-bg{ background:var(--cream); color:var(--dark); }
+  .cream-bg h2.script-title{ color:var(--dark); }
 
   /* ---------- HERO ---------- */
   .hero{ padding:34px 26px 30px; text-align:center; overflow:hidden; }
   .hero:before{
     content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
-    background-image:radial-gradient(circle, rgba(229,111,123,.32) 1.5px, transparent 1.7px);
+    background-image:radial-gradient(circle, rgba(201,162,78,.35) 1.5px, transparent 1.7px);
     background-size:28px 28px; animation:backgroundDrift 12s linear infinite;
   }
   .hero:after{
     content:"♥     ♥     ♥"; position:absolute; left:0; right:0; bottom:18%;
-    color:rgba(229,111,123,.22); font-family:'Caveat',cursive; font-size:2.2rem;
+    color:rgba(201,162,78,.28); font-family:'Caveat',cursive; font-size:2.2rem;
     letter-spacing:18px; white-space:nowrap; pointer-events:none;
     animation:heartFloat 7s ease-in-out infinite;
   }
   .ambient-decor{ position:absolute; inset:0; pointer-events:none; z-index:0; }
   .ambient-decor span{
-    position:absolute; color:rgba(229,111,123,.32); font-family:'Caveat',cursive;
+    position:absolute; color:rgba(201,162,78,.42); font-family:'Caveat',cursive;
     font-size:1.55rem; animation:ambientFloat 5s ease-in-out infinite;
   }
   .ambient-decor span:nth-child(1){ left:10%; top:18%; animation-delay:-1s; }
@@ -231,22 +232,22 @@
   .hero-envelope:focus-visible{ outline:3px solid var(--maroon); outline-offset:6px; }
   .envelope-paper{
     position:absolute; z-index:1; left:24px; right:24px; bottom:58px; height:112px;
-    background:var(--cream); border:1px solid rgba(229,111,123,.35);
+    background:var(--cream); border:1px solid rgba(201,162,78,.6);
     box-shadow:0 5px 12px rgba(61,16,16,.14); transition:transform .8s ease .15s;
   }
   .envelope-body{
     position:absolute; z-index:2; left:0; right:0; bottom:48px; height:120px;
-    background:var(--maroon); border-radius:4px; overflow:hidden;
-    box-shadow:0 12px 22px rgba(61,16,16,.2);
+    background:#fff; border-radius:4px; overflow:hidden;
+    border:1px solid rgba(61,16,16,.2); box-shadow:0 12px 22px rgba(61,16,16,.2);
   }
   .envelope-body:before,.envelope-body:after{
     content:""; position:absolute; bottom:0; width:0; height:0; border-style:solid; z-index:2;
   }
-  .envelope-body:before{ left:0; border-width:120px 125px 0 0; border-color:var(--maroon-deep) transparent transparent transparent; }
-  .envelope-body:after{ right:0; border-width:0 125px 120px 0; border-color:transparent #d95d6c transparent transparent; }
+  .envelope-body:before{ left:0; border-width:120px 125px 0 0; border-color:#e2c77e transparent transparent transparent; }
+  .envelope-body:after{ right:0; border-width:0 125px 120px 0; border-color:transparent #b48837 transparent transparent; }
   .envelope-flap{
     position:absolute; z-index:3; top:26px; left:0; width:100%; height:112px;
-    background:var(--maroon-deep); clip-path:polygon(0 0,50% 72%,100% 0,100% 18%,50% 90%,0 18%);
+    background:#e2c77e; clip-path:polygon(0 0,50% 72%,100% 0,100% 18%,50% 90%,0 18%);
     transform-origin:top center; transition:transform .8s ease, z-index 0s linear .4s;
   }
   .tap-label{
@@ -382,8 +383,8 @@
   }
   .seconds-box .cd-num{ animation:secondsPulse 1s ease-in-out infinite; }
   @keyframes secondsPulse{
-    0%,100%{ text-shadow:0 0 0 rgba(229,111,123,0); transform:scale(1); }
-    50%{ text-shadow:0 0 12px rgba(229,111,123,.95),0 0 22px rgba(229,111,123,.5); transform:scale(1.12); }
+    0%,100%{ text-shadow:0 0 0 rgba(201,162,78,0); transform:scale(1); }
+    50%{ text-shadow:0 0 12px rgba(201,162,78,.95),0 0 22px rgba(201,162,78,.5); transform:scale(1.12); }
   }
   .cd-label{
     font-size:.72rem;
@@ -417,8 +418,8 @@
     border-radius:2px;
     padding:20px 14px 28px;
     position:relative;
-    box-shadow:0 10px 24px rgba(229,111,123,.2);
-    border:1px solid rgba(229,111,123,.35);
+    box-shadow:0 10px 24px rgba(201,162,78,.2);
+    border:1px solid rgba(201,162,78,.45);
   }
   .tape{
     width:90px; height:28px;
@@ -457,12 +458,12 @@
     display:inline-flex; align-items:center; justify-content:center;
     width:34px; height:34px; border-radius:50%;
     border:2px solid var(--maroon);
-    box-shadow:0 0 7px rgba(229,111,123,.75),0 0 14px rgba(229,111,123,.3);
+    box-shadow:0 0 7px rgba(201,162,78,.85),0 0 14px rgba(201,162,78,.35);
     animation:dateGlow 1.8s ease-in-out infinite;
   }
   @keyframes dateGlow{
-    0%,100%{ box-shadow:0 0 7px rgba(229,111,123,.75),0 0 14px rgba(229,111,123,.3); transform:scale(1); }
-    50%{ box-shadow:0 0 10px rgba(229,111,123,1),0 0 22px rgba(229,111,123,.55); transform:scale(1.12); }
+    0%,100%{ box-shadow:0 0 7px rgba(201,162,78,.85),0 0 14px rgba(201,162,78,.35); transform:scale(1); }
+    50%{ box-shadow:0 0 10px rgba(201,162,78,1),0 0 22px rgba(201,162,78,.6); transform:scale(1.12); }
   }
 
 
@@ -604,7 +605,7 @@
     position:absolute; top:0; left:0;
     border-style:solid;
     border-width:0 110px 95px 110px;
-    border-color:transparent transparent #f19aa0 transparent;
+    border-color:transparent transparent #e2c77e transparent;
   }
   .env-flap::after{
     content:"";
@@ -733,8 +734,8 @@
       <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
     </div>
     <svg class="swoop" viewBox="0 0 400 70" preserveAspectRatio="none">
-      <path d="M0,5 C100,70 300,70 400,5" fill="none" stroke="#e56f7b" stroke-width="3"/>
-      <path d="M190,32 c-8,-10 -24,-2 -18,10 c4,8 14,14 18,18 c4,-4 14,-10 18,-18 c6,-12 -10,-20 -18,-10z" fill="#e56f7b"/>
+      <path d="M0,5 C100,70 300,70 400,5" fill="none" stroke="#c9a24e" stroke-width="3"/>
+      <path d="M190,32 c-8,-10 -24,-2 -18,10 c4,8 14,14 18,18 c4,-4 14,-10 18,-18 c6,-12 -10,-20 -18,-10z" fill="#c9a24e"/>
     </svg>
     <p class="finally">Finally,</p>
     <h1>WE ARE<br>GETTING MARRIED</h1>
@@ -760,7 +761,7 @@
   <!-- AYAH / NAMES -->
   <section class="ayah-page maroon-bg">
     <svg class="ayah-swoop" viewBox="0 0 120 40" preserveAspectRatio="none">
-      <path d="M0,4 C30,40 90,40 120,4" fill="none" stroke="#e56f7b" stroke-width="2.5"/>
+      <path d="M0,4 C30,40 90,40 120,4" fill="none" stroke="#c9a24e" stroke-width="2.5"/>
     </svg>
     <p class="ayah-text">
       ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
