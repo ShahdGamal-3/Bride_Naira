@@ -68,6 +68,76 @@
   .page.is-locked > .closing,
   .page.is-locked > .rsvp,
   .page.is-locked > .back-to-envelope{ display:none; }
+  .heart-rain{
+    position:absolute; inset:0; z-index:8; pointer-events:none; overflow:hidden;
+  }
+  .heart-rain span{
+    position:absolute; color:rgba(171,13,78,.2); font-family:'Caveat',cursive;
+    font-size:1.25rem; animation:pageHeartFloat 6s ease-in-out infinite;
+  }
+  .heart-rain span:nth-child(1){left:7%;top:5%;animation-delay:-1s}
+  .heart-rain span:nth-child(2){left:86%;top:8%;font-size:1.7rem;animation-delay:-4s}
+  .heart-rain span:nth-child(3){left:15%;top:14%;animation-delay:-2s}
+  .heart-rain span:nth-child(4){left:78%;top:19%;font-size:1rem;animation-delay:-5s}
+  .heart-rain span:nth-child(5){left:4%;top:27%;font-size:1.6rem;animation-delay:-3s}
+  .heart-rain span:nth-child(6){left:92%;top:32%;animation-delay:-1.5s}
+  .heart-rain span:nth-child(7){left:12%;top:39%;font-size:1rem;animation-delay:-4.5s}
+  .heart-rain span:nth-child(8){left:84%;top:44%;font-size:1.7rem;animation-delay:-2.5s}
+  .heart-rain span:nth-child(9){left:5%;top:51%;animation-delay:-5.5s}
+  .heart-rain span:nth-child(10){left:90%;top:57%;font-size:1rem;animation-delay:-3.5s}
+  .heart-rain span:nth-child(11){left:16%;top:64%;font-size:1.6rem;animation-delay:-1.8s}
+  .heart-rain span:nth-child(12){left:80%;top:69%;animation-delay:-4.2s}
+  .heart-rain span:nth-child(13){left:6%;top:76%;font-size:1rem;animation-delay:-2.2s}
+  .heart-rain span:nth-child(14){left:88%;top:82%;font-size:1.6rem;animation-delay:-5.2s}
+  .heart-rain span:nth-child(15){left:20%;top:89%;animation-delay:-3.2s}
+  .heart-rain span:nth-child(16){left:74%;top:94%;font-size:1rem;animation-delay:-1.2s}
+  .heart-rain span:nth-child(17){left:34%;top:7%;font-size:1rem;animation-delay:-2.8s}
+  .heart-rain span:nth-child(18){left:67%;top:12%;font-size:1.5rem;animation-delay:-4.8s}
+  .heart-rain span:nth-child(19){left:25%;top:22%;animation-delay:-1.6s}
+  .heart-rain span:nth-child(20){left:58%;top:26%;font-size:1rem;animation-delay:-3.8s}
+  .heart-rain span:nth-child(21){left:31%;top:34%;font-size:1.6rem;animation-delay:-5.8s}
+  .heart-rain span:nth-child(22){left:70%;top:38%;animation-delay:-2.6s}
+  .heart-rain span:nth-child(23){left:37%;top:48%;font-size:1rem;animation-delay:-4.6s}
+  .heart-rain span:nth-child(24){left:63%;top:53%;font-size:1.5rem;animation-delay:-1.4s}
+  .heart-rain span:nth-child(25){left:27%;top:59%;animation-delay:-3.6s}
+  .heart-rain span:nth-child(26){left:69%;top:63%;font-size:1rem;animation-delay:-5.6s}
+  .heart-rain span:nth-child(27){left:42%;top:72%;font-size:1.6rem;animation-delay:-2.4s}
+  .heart-rain span:nth-child(28){left:57%;top:78%;animation-delay:-4.4s}
+  .heart-rain span:nth-child(29){left:33%;top:84%;font-size:1rem;animation-delay:-1.9s}
+  .heart-rain span:nth-child(30){left:65%;top:88%;font-size:1.5rem;animation-delay:-3.9s}
+  .heart-rain span:nth-child(31){left:47%;top:93%;animation-delay:-5.9s}
+  .heart-rain span:nth-child(32){left:22%;top:97%;font-size:1rem;animation-delay:-2.9s}
+  .heart-rain .bow{
+    width:22px; height:10px; background:rgba(171,13,78,.24); border-radius:50%;
+    animation-duration:7s;
+  }
+  .heart-rain .bow:before,.heart-rain .bow:after{
+    content:""; position:absolute; top:-4px; width:11px; height:14px;
+    background:rgba(171,13,78,.24); border-radius:70% 30% 70% 30%;
+  }
+  .heart-rain .bow:before{left:-8px;transform:rotate(28deg)}
+  .heart-rain .bow:after{right:-8px;transform:scaleX(-1) rotate(28deg)}
+  .heart-rain .ribbon{
+    width:6px; height:24px; background:rgba(171,13,78,.22); border-radius:4px;
+    animation-duration:8s;
+  }
+  .heart-rain .ribbon:after{
+    content:""; position:absolute; bottom:-5px; left:-3px;
+    border-left:6px solid transparent; border-right:6px solid transparent;
+    border-top:7px solid rgba(171,13,78,.22);
+  }
+  .heart-rain span:nth-child(33){left:48%;top:16%;}
+  .heart-rain span:nth-child(34){left:72%;top:31%;transform:rotate(12deg)}
+  .heart-rain span:nth-child(35){left:24%;top:46%;}
+  .heart-rain span:nth-child(36){left:76%;top:61%;transform:rotate(-12deg)}
+  .heart-rain span:nth-child(37){left:45%;top:68%;}
+  .heart-rain span:nth-child(38){left:18%;top:80%;transform:rotate(12deg)}
+  .heart-rain span:nth-child(39){left:82%;top:91%;}
+  .heart-rain span:nth-child(40){left:55%;top:97%;transform:rotate(-12deg)}
+  @keyframes pageHeartFloat{
+    0%,100%{opacity:.16;transform:translateY(8px) rotate(-8deg) scale(.9)}
+    50%{opacity:.55;transform:translateY(-14px) rotate(8deg) scale(1.12)}
+  }
   section{position:relative;}
   img{display:block; max-width:100%;}
 
@@ -90,8 +160,31 @@
     background-image:radial-gradient(circle, rgba(218,122,164,.28) 1.5px, transparent 1.7px);
     background-size:28px 28px; animation:backgroundDrift 12s linear infinite;
   }
+  .hero:after{
+    content:"♥     ♥     ♥"; position:absolute; left:0; right:0; bottom:18%;
+    color:rgba(171,13,78,.12); font-family:'Caveat',cursive; font-size:2.2rem;
+    letter-spacing:18px; white-space:nowrap; pointer-events:none;
+    animation:heartFloat 7s ease-in-out infinite;
+  }
+  .ambient-decor{ position:absolute; inset:0; pointer-events:none; z-index:0; }
+  .ambient-decor span{
+    position:absolute; color:rgba(171,13,78,.22); font-family:'Caveat',cursive;
+    font-size:1.55rem; animation:ambientFloat 5s ease-in-out infinite;
+  }
+  .ambient-decor span:nth-child(1){ left:10%; top:18%; animation-delay:-1s; }
+  .ambient-decor span:nth-child(2){ right:12%; top:28%; font-size:1.1rem; animation-delay:-3s; }
+  .ambient-decor span:nth-child(3){ left:17%; bottom:25%; font-size:1.15rem; animation-delay:-2s; }
+  .ambient-decor span:nth-child(4){ right:16%; bottom:19%; animation-delay:-4s; }
+  @keyframes ambientFloat{
+    0%,100%{ opacity:.3; transform:translateY(8px) rotate(-8deg) scale(.9); }
+    50%{ opacity:1; transform:translateY(-14px) rotate(8deg) scale(1.08); }
+  }
   .hero > *{ position:relative; z-index:1; }
   @keyframes backgroundDrift{ from{background-position:0 0;} to{background-position:28px 56px;} }
+  @keyframes heartFloat{
+    0%,100%{ opacity:.35; transform:translateY(10px) translateX(-8px) rotate(-3deg); }
+    50%{ opacity:.85; transform:translateY(-18px) translateX(8px) rotate(3deg); }
+  }
   .swoop{ width:100%; height:70px; display:block; margin-bottom:6px; }
   .hero .finally{
     font-family:'Gaegu',cursive;
@@ -169,12 +262,13 @@
   .hero.is-opening h1{ animation:heroTextEnter .8s ease .2s both; }
   .hero.is-opening .swoop{ animation:heroTextEnter .8s ease 0s both; }
   @keyframes envelopeEnter{
-    0%{ transform:translateY(0) scale(1); }
-    55%{ transform:translateY(60px) scale(1.03); }
-    100%{ transform:translateY(52px) scale(1); }
+    0%{ transform:translateY(0) rotate(0) scale(1); }
+    45%{ transform:translateY(64px) rotate(-2deg) scale(1.04); }
+    75%{ transform:translateY(46px) rotate(1deg) scale(.99); }
+    100%{ transform:translateY(52px) rotate(0) scale(1); }
   }
   @keyframes heroTextEnter{
-    from{ opacity:.35; transform:translateY(18px); }
+    from{ opacity:0; transform:translateY(30px) scale(.92); }
     to{ opacity:1; transform:translateY(0); }
   }
   .celebration{ position:absolute; inset:0; pointer-events:none; z-index:2; }
@@ -361,6 +455,12 @@
     display:inline-flex; align-items:center; justify-content:center;
     width:34px; height:34px; border-radius:50%;
     border:2px solid var(--maroon);
+    box-shadow:0 0 7px rgba(218,122,164,.65),0 0 14px rgba(218,122,164,.25);
+    animation:dateGlow 1.8s ease-in-out infinite;
+  }
+  @keyframes dateGlow{
+    0%,100%{ box-shadow:0 0 7px rgba(218,122,164,.65),0 0 14px rgba(218,122,164,.25); transform:scale(1); }
+    50%{ box-shadow:0 0 10px rgba(218,122,164,.9),0 0 22px rgba(218,122,164,.45); transform:scale(1.12); }
   }
 
 
@@ -607,9 +707,24 @@
 </head>
 <body>
 <div class="page is-locked" id="invitationPage">
+  <div class="heart-rain" aria-hidden="true">
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    <span class="bow"></span><span class="ribbon"></span><span class="bow"></span><span class="ribbon"></span>
+    <span class="bow"></span><span class="ribbon"></span><span class="bow"></span><span class="ribbon"></span>
+  </div>
 
   <!-- HERO -->
   <section class="hero cream-bg">
+    <div class="ambient-decor" aria-hidden="true">
+      <span>♥</span><span>♥</span><span>♥</span><span>♥</span>
+    </div>
     <svg class="swoop" viewBox="0 0 400 70" preserveAspectRatio="none">
       <path d="M0,5 C100,70 300,70 400,5" fill="none" stroke="#ab0d4e" stroke-width="3"/>
       <path d="M190,32 c-8,-10 -24,-2 -18,10 c4,8 14,14 18,18 c4,-4 14,-10 18,-18 c6,-12 -10,-20 -18,-10z" fill="#ab0d4e"/>
