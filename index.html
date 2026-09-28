@@ -77,10 +77,8 @@
   .page.is-locked .hero > .ambient-decor,
   .page.is-locked .hero > .celebration{ display:none; }
   .page.is-locked .hero-envelope{
-    position:absolute; left:50%; top:50%;
-    width:min(92vw, 420px, 73.6vh); height:auto; aspect-ratio:4 / 5;
-    margin:0; overflow:hidden; z-index:2;
-    transform:translate(-50%, -50%);
+    position:absolute; inset:0; width:100%; height:100%; margin:0;
+    overflow:hidden; z-index:2; transform:none;
     touch-action:none;
   }
   .cover-image{ display:none; }
@@ -952,7 +950,7 @@
   }
   .page.is-locked .hero-envelope,
   .page.is-locked .hero.is-opening .hero-envelope{
-    transform:translate(-50%, -50%);
+    transform:none;
   }
   .page.is-locked .hero-envelope:focus,
   .page.is-locked .hero-envelope:active{ outline:none; }
