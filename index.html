@@ -48,12 +48,14 @@
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
+  html{scrollbar-gutter:stable;}
   body{
     background:#e3d9bd;
     font-family:'Gaegu',cursive;
     color:var(--dark);
     display:flex;
     justify-content:center;
+    overflow-y:scroll;
   }
   .page{
     width:100%;
@@ -938,6 +940,24 @@
     box-shadow:0 6px 14px rgba(85,9,31,.25); filter:none; transform:none;
   }
   .maps-btn{ -webkit-tap-highlight-color:transparent; }
+
+  /* Keep the opening animation inside the cover frame. */
+  .page.is-locked .hero-envelope,
+  .page.is-locked .hero.is-opening .hero-envelope,
+  .page.is-locked .hero.is-opening .envelope-body{
+    animation:none !important;
+    transform:none;
+  }
+  .page.is-locked .hero-envelope:focus,
+  .page.is-locked .hero-envelope:active{ outline:none; }
+  .page.is-locked #coverVideo{
+    border:0;
+    outline:0;
+    object-fit:cover;
+    object-position:center;
+    background:var(--maroon);
+    transform:none;
+  }
 </style>
 </head>
 <body>
